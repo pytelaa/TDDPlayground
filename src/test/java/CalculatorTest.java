@@ -205,8 +205,75 @@ class CalculatorTest {
 
     }
 
+    @Test
+    void test22() {
+        //given
+        String s = "e * 2";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("5,43656", result);
+    }
 
+    @Test
+    void test23() {
+        //given
+        String s = "e ";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("2,71828", result);
+    }
 
+    @Test
+    void test24() {
+        //given
+        String s = "1^0";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("1,0", result);
+    }
+
+    @Test
+    void test25() {
+        //given
+        String s = "5^3";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("125,0", result);
+    }
+
+    @Test
+    void test26() {
+        //given
+        String s = "5,2^3,6";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("378,104666243201", result);
+    }
+
+    @Test
+    void test27() {
+        //given
+        String s = "15,1^-0,6";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("0,19616152611931284", result);
+    }
+
+    @Test
+    void test28() {
+        //given
+        String s = "4 + 2 - 6 ";
+        //when
+        String result = calculator.calculate(s);
+        //then
+        Assertions.assertEquals("0,0", result);
+    }
 
 
 }
